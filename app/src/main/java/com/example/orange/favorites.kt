@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -43,6 +44,8 @@ class favorites : AppCompatActivity() {
             val intent = Intent(this@favorites, MainActivity::class.java)
             startActivity(intent)
         }
+
+
 
 
     }
