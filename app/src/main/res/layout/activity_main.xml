@@ -34,7 +34,7 @@
         android:layout_marginTop="92dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
-        android:text="have a paper have a paper have a paper have a paper"
+        android:text=""
         android:textSize="28sp"
         app:emojiCompatEnabled="false"
         app:layout_constraintEnd_toEndOf="@+id/view2"

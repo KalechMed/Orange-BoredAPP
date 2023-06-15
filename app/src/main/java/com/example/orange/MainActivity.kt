@@ -29,13 +29,28 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val sharedPref = getSharedPreferences("localData", Context.MODE_PRIVATE)
+
         val btn_cancel: ImageView = findViewById(R.id.cancel)
         val btn_like: ImageView = findViewById(R.id.like)
         val btn_star: ImageView = findViewById(R.id.star)
 
         val  text_Activity: TextView = findViewById(R.id.activity)
 
+        CoroutineScope(Dispatchers.IO).launch {
+
+                val response = apiService.getActivity()
+                val activity = response.activity
+
+                runOnUiThread {
+
+                    text_Activity.text = activity
+
+
+
+
+                }
+
+        }
 
 
         btn_cancel.setOnClickListener {
@@ -56,31 +71,29 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
+
         btn_like.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 try {
                     val response = apiService.getActivity()
                     val activity = response.activity
 
+
+                    val likedActivities = getArrayList(applicationContext, "likedActivitiesKey")
+                    likedActivities.add(text_Activity.text as String)
+                    saveArrayList(applicationContext, "likedActivitiesKey", likedActivities)
+
                     runOnUiThread {
-
                         text_Activity.text = activity
-
-                        val myArrayList = ArrayList<String>()
-                        myArrayList.add(activity)
-                        saveArrayList(applicationContext, "activityKey", myArrayList)
-
-
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
             }
-
-
-
-
         }
+
+
 
 
         btn_star.setOnClickListener {

@@ -15,8 +15,9 @@ fun getArrayList(context: Context, key: String): ArrayList<String> {
     val gson = Gson()
     val json = sharedPreferences.getString(key, null)
     val type = object : TypeToken<ArrayList<String>>() {}.type
-    return gson.fromJson(json, type)
+    return gson.fromJson(json, type) ?: ArrayList()
 }
+
 
 class favorites : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
@@ -27,7 +28,7 @@ class favorites : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val retrievedArrayList = getArrayList(applicationContext, "activityKey")
+        val retrievedArrayList = getArrayList(applicationContext, "likedActivitiesKey")
         val adapter = Adapter(retrievedArrayList)
         recyclerView.adapter = adapter
 

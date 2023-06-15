@@ -15,7 +15,7 @@ class Adapter(private val data: ArrayList<String>) : RecyclerView.Adapter<Adapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.activity_favorites, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card, parent, false)
         return ViewHolder(itemView)
     }
 
