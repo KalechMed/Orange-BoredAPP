@@ -24,7 +24,8 @@ fun getArrayList(context: Context, key: String): ArrayList<String> {
 
 class favorites : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
-    val buttonBack: ImageView = findViewById(R.id.back)
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorites)
@@ -36,7 +37,7 @@ class favorites : AppCompatActivity() {
         val adapter = Adapter(retrievedArrayList)
         recyclerView.adapter = adapter
 
-
+        val buttonBack: ImageView = findViewById(R.id.back)
 
         buttonBack.setOnClickListener {
             val intent = Intent(this@favorites, MainActivity::class.java)

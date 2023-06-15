@@ -40,10 +40,11 @@
 
             <TextView
                 android:id="@+id/activity"
-                android:layout_width="249dp"
+                android:layout_width="287dp"
                 android:layout_height="239dp"
                 android:layout_gravity="center"
-                android:fontFamily="@font/poppins_semibold"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
                 android:text=""
                 android:textSize="28sp"
                 app:emojiCompatEnabled="false" />
@@ -77,16 +78,28 @@
         app:srcCompat="@drawable/star"
         app:tint="#07A6FF" />
 
+    <View
+        android:id="@+id/view4"
+        android:layout_width="56dp"
+        android:layout_height="53dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@+id/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintStart_toEndOf="@+id/cancel"
+        app:layout_constraintTop_toTopOf="@+id/cancel" />
+
     <ImageView
         android:id="@+id/like"
-        android:layout_width="62dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/star"
-        app:layout_constraintTop_toBottomOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.0"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
+
+
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/view4"
         app:srcCompat="@drawable/like"
         app:tint="#00D387" />
 
