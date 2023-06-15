@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="600px">
 
 
     <View
@@ -20,12 +20,12 @@
 
     <TextView
         android:id="@+id/txtActivity"
-        android:layout_width="325dp"
-        android:layout_height="98dp"
+        android:layout_width="322dp"
+        android:layout_height="57dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Make a scrapbook with pictures of your favorite memories"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="@+id/view"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="@+id/txtActivity"
         app:layout_constraintTop_toBottomOf="@+id/txtActivity"
         app:srcCompat="@drawable/members"
@@ -72,8 +72,8 @@
         android:id="@+id/imageView4"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/txtActivity"
         app:srcCompat="@drawable/price"

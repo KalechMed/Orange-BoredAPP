@@ -1,9 +1,12 @@
 package com.example.orange
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +24,7 @@ fun getArrayList(context: Context, key: String): ArrayList<String> {
 
 class favorites : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
+    val buttonBack: ImageView = findViewById(R.id.back)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_favorites)
@@ -34,6 +38,10 @@ class favorites : AppCompatActivity() {
 
 
 
+        buttonBack.setOnClickListener {
+            val intent = Intent(this@favorites, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }

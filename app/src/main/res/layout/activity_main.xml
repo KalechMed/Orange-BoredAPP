@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:elevation="0dp"
     tools:context=".MainActivity">
 
     <ImageView
@@ -17,30 +18,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bored" />
 
-    <View
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/view2"
         android:layout_width="356dp"
         android:layout_height="463dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/rectangle"
+        app:cardBackgroundColor="#66D9D9D9"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-    <TextView
-        android:id="@+id/activity"
-        android:layout_width="284dp"
-        android:layout_height="261dp"
-        android:layout_marginTop="92dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:gravity="center"
-        android:text=""
-        android:textSize="28sp"
-        app:emojiCompatEnabled="false"
-        app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.611"
-        app:layout_constraintStart_toStartOf="@+id/view2"
-        app:layout_constraintTop_toTopOf="@+id/view2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/activity"
+                android:layout_width="249dp"
+                android:layout_height="239dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_semibold"
+                android:text=""
+                android:textSize="28sp"
+                app:emojiCompatEnabled="false" />
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
 
     <ImageView
         android:id="@+id/cancel"
